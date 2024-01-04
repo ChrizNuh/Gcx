@@ -2,7 +2,7 @@
 
 std::map<unsigned int, std::string> commandMap;
 
-_GAME GAME = MGS4;
+GAME game = GAME::MGS4;
 
 void loadCommands(const std::string& commands) {
 	std::string str;

@@ -19,22 +19,22 @@ void CLI::processCommands() {
 void CLI::setCommand(char* arg) {
 
 	if (!strcmp(arg, "-MGS4") || !strcmp(arg, "-mgs4") || !strcmp(arg, "-4")) {
-		GAME = MGS4;
+		game = GAME::MGS4;
 		return;
 	}
 
 	if (!strcmp(arg, "-MGS3") || !strcmp(arg, "-mgs3") || !strcmp(arg, "-3")) {
-		GAME = MGS3;
+		game = GAME::MGS3;
 		return;
 	}
 
 	if (!strcmp(arg, "-COMPILE") || !strcmp(arg, "-compile") || !strcmp(arg, "-c") || !strcmp(arg, "-C")) {
-		command = CLI::COMPILE;
+		command = CLI::COMMAND::COMPILE;
 		return;
 	}
 
 	if (!strcmp(arg, "-DECOMPILE") || !strcmp(arg, "-decompile") || !strcmp(arg, "-d") || !strcmp(arg, "-D")) {
-		command = CLI::DECOMPILE;
+		command = CLI::COMMAND::DECOMPILE;
 		return;
 	}
 
@@ -120,10 +120,10 @@ void CLI::decompileFile() {
 
 void CLI::processFile() {
 	switch (command) {
-	case CLI::DECOMPILE:
+	case CLI::COMMAND::DECOMPILE:
 		decompileFile();
 		break;
-	case CLI::COMPILE:
+	case CLI::COMMAND::COMPILE:
 		compileFile();
 		break;
 	default:

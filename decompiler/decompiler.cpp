@@ -302,7 +302,7 @@ void Decompiler::readParam() {
 	if (!isInline) { indentation.printIndent(); }
 	std::cout << "-";
 
-	GAME == MGS3 ? mgs3param() : mgs4param();
+	game == GAME::MGS3 ? mgs3param() : mgs4param();
 
 	if (procBuffer[ptr] != 0x00) std::cout << " \\";
 	printNewLine();

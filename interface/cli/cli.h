@@ -10,7 +10,7 @@ public:
 	void run(std::string programName, std::string version);
 	void exit();
 
-	enum COMMAND {
+	enum class COMMAND {
 		DECOMPILE,
 		COMPILE
 	};
