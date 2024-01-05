@@ -7,7 +7,7 @@ Gcx::Gcx(std::string filename) {
 
 void Gcx::initData() {
 	std::ifstream fs;
-	int size = std::filesystem::file_size(filename);
+	std::streamsize size = std::filesystem::file_size(filename);
 
 	fs.open(filename, std::ios::binary);
 	uint8_t* data = new uint8_t[size];
